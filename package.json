@@ -6,7 +6,7 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
     "lint:fix": "eslint . --ext .ts,.tsx --fix",
     "update:cities": "ts-node scripts/update-cities.ts",
     "format": "prettier --write ."
@@ -56,7 +56,6 @@
     "zustand": "^5.0.8"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@tanstack/eslint-plugin-query": "^5.91.0",
     "@types/node": "^20",

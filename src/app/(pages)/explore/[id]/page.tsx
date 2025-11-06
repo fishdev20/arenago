@@ -26,7 +26,7 @@ export default async function ExploreDetailPage(context: { params: Promise<{ id:
   const isFree = properties['free-use?'] === true
 
   const propMap = (category?.props || []).reduce(
-    (acc, prop) => {
+    (acc: any, prop: any) => {
       acc[prop.key] = {
         label: prop.name?.en || prop.name?.fi || prop.key,
         description: prop.description?.en || '',
