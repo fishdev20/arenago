@@ -3,7 +3,7 @@
 import { Spinner } from '@/components/ui/spinner'
 import { useSearchParams } from 'next/navigation'
 import { Suspense } from 'react'
-import ActionRouter from './action-router'
+// import ActionRouter from './action-router'
 
 export default function FirebaseActionPage() {
   const searchParams = useSearchParams()
@@ -26,7 +26,7 @@ export default function FirebaseActionPage() {
         </div>
       }
     >
-      <ActionRouter mode={mode} oobCode={oobCode} />
+      {/* <ActionRouter mode={mode} oobCode={oobCode} /> */}
     </Suspense>
   )
 }
