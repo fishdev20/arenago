@@ -29,7 +29,6 @@ export default function AlertMessage({
   type = 'info',
   actionLabel,
   onAction,
-  onClose,
 }: AlertMessageProps) {
   const { icon: Icon, color } = typeConfig[type]
 

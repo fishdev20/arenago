@@ -33,7 +33,6 @@ export default function ExplorePage() {
     selectedFacilities,
     selectedCities,
     setSelectedCities,
-    setSelectedFacilities,
     searchSports,
     results,
     error,
@@ -54,7 +53,7 @@ export default function ExplorePage() {
   useEffect(() => {
     const cityFromQuery = searchParams.get('city')
     if (cityFromQuery) setSelectedCities([cityFromQuery])
-  }, [searchParams])
+  }, [searchParams, setSelectedCities])
 
   const debouncedCities = useDebounce(selectedCities, 400)
   const debouncedFacilities = useDebounce(selectedFacilities, 400)
@@ -63,7 +62,7 @@ export default function ExplorePage() {
 
   useEffect(() => {
     searchSports(debouncedPage, debouncedPageSize)
-  }, [debouncedCities, debouncedFacilities, debouncedPageSize])
+  }, [debouncedCities, debouncedFacilities, debouncedPageSize, debouncedPage, searchSports])
 
   const handlePageChange = (page: number) => searchSports(page, pageSize)
 

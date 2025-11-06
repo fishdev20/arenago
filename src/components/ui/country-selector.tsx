@@ -50,6 +50,7 @@ export function getCountryName(countryCode: string) {
   try {
     return new Intl.DisplayNames(['en'], { type: 'region' }).of(countryCode) || countryCode
   } catch (error) {
+    console.log(error)
     return countryCode
   }
 }
@@ -86,6 +87,7 @@ export const CountrySelect = ({
       modal
       onOpenChange={(open) => {
         setIsOpen(open)
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         open && setSearchValue('')
       }}
     >

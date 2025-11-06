@@ -58,7 +58,7 @@ export default function SignInPage() {
         </Button>
         <GoogleButton />
         <p className="mt-1 text-sm text-muted-foreground">
-          Don't have an account?{' '}
+          Don&apos;t have an account?{' '}
           <Link href={'/signup'} className="text-primary hover:underline">
             Sign up
           </Link>

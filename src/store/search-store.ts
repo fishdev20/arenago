@@ -45,7 +45,7 @@ export const useSearchStore = create<SearchState>((set, get) => ({
       pagination: { ...state.pagination, currentPage: page },
     })),
   setPageSize: (size) =>
-    set((state) => ({
+    set(() => ({
       pageSize: size,
     })),
   setSelectedFacilities: (sports) =>

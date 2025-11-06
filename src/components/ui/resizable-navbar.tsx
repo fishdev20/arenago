@@ -3,6 +3,7 @@ import { cn } from '@/lib/utils'
 import { Menu, X } from 'lucide-react'
 
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'motion/react'
+import Image from 'next/image'
 import Link from 'next/link'
 
 import React, { useRef, useState } from 'react'
@@ -176,7 +177,7 @@ export const MobileNavHeader = ({ children, className }: MobileNavHeaderProps) =
   )
 }
 
-export const MobileNavMenu = ({ children, className, isOpen, onClose }: MobileNavMenuProps) => {
+export const MobileNavMenu = ({ children, className, isOpen }: MobileNavMenuProps) => {
   return (
     <AnimatePresence>
       {isOpen && (
@@ -206,7 +207,7 @@ export const NavbarLogo = () => {
       href="/"
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
     >
-      <img src="https://assets.aceternity.com/logo-dark.png" alt="logo" width={30} height={30} />
+      <Image src="https://assets.aceternity.com/logo-dark.png" alt="logo" width={30} height={30} />
       <span className="font-medium dark:text-white text-xl">ArenaGo</span>
     </Link>
   )

@@ -4,7 +4,7 @@ import { SignupRequest } from '@/types/auth'
 import { upsertProfile } from '../user.services'
 
 export async function signIn(email: string, password: string) {
-  const { data, error } = await supabase.auth.signInWithPassword({ email, password })
+  const { error } = await supabase.auth.signInWithPassword({ email, password })
   if (error) throw error
 
   // const sbUser = data.user

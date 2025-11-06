@@ -1,21 +1,25 @@
 {
-    "root": true,
-    "extends": [
-      "next/core-web-vitals",
-      "eslint:recommended",
-      "plugin:prettier/recommended"
-    ],
-    "plugins": ["prettier"],
-    "rules": {
-      "prettier/prettier": [
-        "error",
-        {
-          "singleQuote": true,
-          "semi": false,
-          "tabWidth": 2,
-          "trailingComma": "es5",
-          "printWidth": 100
-        }
-      ]
-    }
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "prettier"],
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "semi": false,
+        "tabWidth": 2,
+        "trailingComma": "es5",
+        "printWidth": 100
+      }
+    ]
   }
+}

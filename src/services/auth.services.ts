@@ -2,18 +2,17 @@
 import { supabase } from '@/lib/supabase/client'
 import { createClientServer } from '@/lib/supabase/server'
 import { toCamel, toSnake } from '@/lib/utils'
-import { User } from '@supabase/supabase-js'
 import { UserProfile } from 'firebase/auth'
 import { redirect } from 'next/navigation'
 
-function toUser(sbUser: User) {
-  return {
-    uid: sbUser.id,
-    email: sbUser.email,
-    displayName: sbUser.user_metadata?.full_name || sbUser.email?.split('@')[0],
-    photoUrl: sbUser.user_metadata?.avatar_url || null,
-  }
-}
+// function toUser(sbUser: User) {
+//   return {
+//     uid: sbUser.id,
+//     email: sbUser.email,
+//     displayName: sbUser.user_metadata?.full_name || sbUser.email?.split('@')[0],
+//     photoUrl: sbUser.user_metadata?.avatar_url || null,
+//   }
+// }
 
 // export async function signUp({ email, password, displayName, info }: SignupRequest) {
 //   const { data, error } = await supabase.auth.signUp({
@@ -84,7 +83,7 @@ type SignInState = { error?: string; success?: string }
 
 export async function signIn(prevState: SignInState, formData: FormData): Promise<SignInState> {
   const supabaseServer = await createClientServer()
-  const { data, error } = await supabaseServer.auth.signInWithPassword({
+  const { error } = await supabaseServer.auth.signInWithPassword({
     email: formData.get('email') as string,
     password: formData.get('password') as string,
   })
