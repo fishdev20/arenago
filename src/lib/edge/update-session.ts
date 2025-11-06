@@ -1,11 +1,11 @@
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 
+export const runtime = 'edge'
+
 export async function updateSession(request: NextRequest) {
-  // ✅ Always create a mutable NextResponse (important for cookie refresh)
   const response = NextResponse.next()
 
-  // ✅ Create Supabase client that can both read & write cookies
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
@@ -32,7 +32,6 @@ export async function updateSession(request: NextRequest) {
     }
   )
 
-  // ✅ This automatically refreshes the session if expired
   const {
     data: { user },
     error,
@@ -44,7 +43,6 @@ export async function updateSession(request: NextRequest) {
 
   const path = request.nextUrl.pathname
 
-  // 🟢 Public routes (accessible without authentication)
   const publicPaths = [
     '/',
     '/explore',

@@ -1,7 +1,10 @@
-import { updateSession } from '@/lib/supabase/middleware'
+import { updateSession } from '@/lib/edge/update-session'
+import { NextRequest } from 'next/server'
 
-export async function middleware(request: Request) {
-  return updateSession(request as any)
+export const runtime = 'edge'
+
+export async function middleware(request: NextRequest) {
+  return updateSession(request)
 }
 
 export const config = {
