@@ -1,7 +1,7 @@
 import { updateSession } from '@/lib/edge/update-session'
 import { NextRequest } from 'next/server'
 
-export const runtime = 'edge'
+export const runtime = 'experimental-edge'
 
 export async function middleware(request: NextRequest) {
   return updateSession(request)
