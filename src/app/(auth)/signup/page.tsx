@@ -142,8 +142,7 @@ export default function SignUpPage() {
             <div className="space-y-1 w-full md:w-[50%]">
               <Label htmlFor="country">Country</Label>
               <CountrySelect
-                value={country}
-                name="country"
+                value={country as CountryCode}
                 onChange={(v) => {
                   setCountry(v)
                   setForm((prev) => ({ ...prev, country: getCountryName(v) }))

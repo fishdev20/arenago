@@ -253,7 +253,7 @@ export default function Profile() {
                 )}
               </Label>
               <CountrySelect
-                value={country}
+                value={country as CountryCode}
                 onChange={(v) => {
                   setCountry(v)
                   setForm((prev) => ({ ...prev, country: getCountryName(v) }))
