@@ -1,6 +1,5 @@
-const fs = require('fs')
-const path = require('path')
-const https = require('https')
+import fs from 'fs'
+import path from 'path'
 
 async function updateCities() {
   // Dynamically get current year

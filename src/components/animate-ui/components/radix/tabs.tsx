@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from 'react'
 
 import {
   Tabs as TabsPrimitive,
@@ -13,21 +13,16 @@ import {
   type TabsTriggerProps as TabsTriggerPrimitiveProps,
   type TabsContentProps as TabsContentPrimitiveProps,
   type TabsContentsProps as TabsContentsPrimitiveProps,
-} from '@/components/animate-ui/primitives/radix/tabs';
-import { cn } from '@/lib/utils';
+} from '@/components/animate-ui/primitives/radix/tabs'
+import { cn } from '@/lib/utils'
 
-type TabsProps = TabsPrimitiveProps;
+type TabsProps = TabsPrimitiveProps
 
 function Tabs({ className, ...props }: TabsProps) {
-  return (
-    <TabsPrimitive
-      className={cn('flex flex-col gap-2', className)}
-      {...props}
-    />
-  );
+  return <TabsPrimitive className={cn('flex flex-col gap-2', className)} {...props} />
 }
 
-type TabsListProps = TabsListPrimitiveProps;
+type TabsListProps = TabsListPrimitiveProps
 
 function TabsList({ className, ...props }: TabsListProps) {
   return (
@@ -35,15 +30,15 @@ function TabsList({ className, ...props }: TabsListProps) {
       <TabsListPrimitive
         className={cn(
           'bg-muted text-muted-foreground inline-flex h-9 w-fit items-center justify-center rounded-lg p-[3px]',
-          className,
+          className
         )}
         {...props}
       />
     </TabsHighlightPrimitive>
-  );
+  )
 }
 
-type TabsTriggerProps = TabsTriggerPrimitiveProps;
+type TabsTriggerProps = TabsTriggerPrimitiveProps
 
 function TabsTrigger({ className, ...props }: TabsTriggerProps) {
   return (
@@ -51,29 +46,24 @@ function TabsTrigger({ className, ...props }: TabsTriggerProps) {
       <TabsTriggerPrimitive
         className={cn(
           "data-[state=active]:text-foreground focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:outline-ring text-muted-foreground inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md w-full px-2 py-1 text-sm font-medium whitespace-nowrap transition-colors duration-500 ease-in-out focus-visible:ring-[3px] focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
-          className,
+          className
         )}
         {...props}
       />
     </TabsHighlightItemPrimitive>
-  );
+  )
 }
 
-type TabsContentsProps = TabsContentsPrimitiveProps;
+type TabsContentsProps = TabsContentsPrimitiveProps
 
 function TabsContents(props: TabsContentsProps) {
-  return <TabsContentsPrimitive {...props} />;
+  return <TabsContentsPrimitive {...props} />
 }
 
-type TabsContentProps = TabsContentPrimitiveProps;
+type TabsContentProps = TabsContentPrimitiveProps
 
 function TabsContent({ className, ...props }: TabsContentProps) {
-  return (
-    <TabsContentPrimitive
-      className={cn('flex-1 outline-none', className)}
-      {...props}
-    />
-  );
+  return <TabsContentPrimitive className={cn('flex-1 outline-none', className)} {...props} />
 }
 
 export {
@@ -87,4 +77,4 @@ export {
   type TabsTriggerProps,
   type TabsContentsProps,
   type TabsContentProps,
-};
+}
