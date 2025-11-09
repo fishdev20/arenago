@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic'
 import { BackButton } from '@/components/app/back-button'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'

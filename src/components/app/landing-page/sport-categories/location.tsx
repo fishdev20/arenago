@@ -58,7 +58,7 @@ export default function Location() {
                 <Card className="relative overflow-hidden rounded-xl shadow-lg hover:scale-[1.03] transition-transform py-0">
                   <CardContent className="relative p-0 aspect-[4/5]">
                     <Image
-                      src={`/images/cities/${city.name}.jpg`}
+                      src={`/images/cities/${city.name.toLowerCase()}.jpg`}
                       alt={city.name}
                       fill
                       className="object-cover"
