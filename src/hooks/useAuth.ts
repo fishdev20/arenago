@@ -129,7 +129,7 @@ export function useAuth() {
       resetUser()
       queryClient.clear()
       toast.success('Signed out')
-      // router.push('/signin')
+      router.push('/signin')
     },
     onError: (error: any) => {
       console.error('Sign out failed:', error)
