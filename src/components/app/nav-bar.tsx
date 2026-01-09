@@ -24,7 +24,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from '../ui/alert-dialog'
-import { AnimatedThemeToggler } from '../ui/animated-theme-toggler'
+import { ThemeToggle } from '../ui/animated-theme-toggler'
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar'
 import { Button } from '../ui/button'
 import {
@@ -73,7 +73,7 @@ export function Nav() {
           <NavbarLogo />
           <NavItems items={navItems} />
           <div className="flex items-center gap-2">
-            <AnimatedThemeToggler />
+            <ThemeToggle />
             <Button
               disabled
               variant="outline"
@@ -110,7 +110,7 @@ export function Nav() {
                 </Button>
               </div>
             )}
-            <AnimatedThemeToggler />
+            <ThemeToggle />
             {user ? (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
@@ -178,7 +178,7 @@ export function Nav() {
                   </Button>
                 </div>
               )}
-              <AnimatedThemeToggler />
+              <ThemeToggle />
               <MobileNavToggle
                 isOpen={isMobileMenuOpen}
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

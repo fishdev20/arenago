@@ -18,12 +18,12 @@ import { useDebounce } from '@/hooks/use-debounce'
 import { useSearchStore } from '@/store/search-store'
 import { AnimatePresence, motion } from 'framer-motion'
 import { ArrowLeft, ArrowRight, List, Map, MapPin, Volleyball } from 'lucide-react'
-import dynamic from 'next/dynamic'
 import { usePathname, useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
+import MapView from './map-view'
 
-// Lazy load map component (for better performance)
-const MapView = dynamic(() => import('./map-view'), { ssr: false })
+// // Lazy load map component (for better performance)
+// const MapView = dynamic(() => import('./map-view'), { ssr: false })
 
 interface ExplorePageProps {
   cityCode?: string
